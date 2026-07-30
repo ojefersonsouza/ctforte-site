@@ -10,10 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0b0c0e; --ink2:#121418; --steel:#1c2026; --line:#2a2f37;
-  --bone:#f4f2ee; --bone2:#e7e3dc; --mut:#9aa1ab; --mut2:#6c727c;
-  /* identidade preto e branco: acento = branco/bone */
-  --acc:#f4f2ee;
+  --ink:#000000; --ink2:#0a0a0a; --steel:#161616; --line:#252525;
+  --bone:#ffffff; --bone2:#e0e0e0; --mut:#999999; --mut2:#666666;
+  /* identidade preto e branco: acento = branco */
+  --acc:#ffffff;
   /* CTA verde em todo o site */
   --green:#1fa85a; --green-d:#178a49; --green-soft:rgba(31,168,90,.14);
   --cta:var(--green); --cta-d:var(--green-d);
@@ -83,7 +83,7 @@ header.nav{position:fixed;top:0;left:0;right:0;z-index:50;
   radial-gradient(100% 80% at 0% 100%, rgba(255,255,255,.05), transparent 50%),
   linear-gradient(180deg,#0b0c0e,#121418);padding:130px 0 70px;overflow:hidden}
 .hero .stripebar{position:absolute;top:74px;left:0;right:0;height:6px;
-  background:repeating-linear-gradient(135deg,#f4f2ee 0 18px,#0b0c0e 18px 30px)}
+  background:repeating-linear-gradient(135deg,#ffffff 0 18px,#000000 18px 30px)}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:46px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);
   border-radius:100px;padding:7px 16px;font-family:var(--c);text-transform:uppercase;
@@ -177,7 +177,7 @@ header.nav{position:fixed;top:0;left:0;right:0;z-index:50;
 .shrow .t{font-family:var(--c);color:var(--mut);letter-spacing:.04em}
 .shrow .m{font-family:var(--c);text-transform:uppercase;letter-spacing:.1em;font-size:.74rem;
   padding:5px 12px;border-radius:100px;font-weight:600}
-.m-mt{background:rgba(255,255,255,.10);color:#e7e3dc}
+.m-mt{background:rgba(255,255,255,.10);color:#e0e0e0}
 .m-bjj{background:rgba(255,255,255,.04);color:#9aa1ab}
 
 /* cta band */
@@ -282,16 +282,16 @@ section.on-light .lead{color:#3a3f47}
 section.on-light p.body,section.on-light .body{color:#4a4f57}
 section.on-light .crumb{color:#6c727c}
 section.on-light .crumb a:hover{color:var(--green)}
-section.on-light .feat{background:#fff;border-color:#ddd7cc}
+section.on-light .feat{background:#fff;border-color:#d0d0d0}
 section.on-light .feat p{color:#4a4f57}
 section.on-light .feat .ic{background:var(--green-soft);color:var(--green)}
-section.on-light .shrow{background:#fff;border-color:#ddd7cc}
+section.on-light .shrow{background:#fff;border-color:#d0d0d0}
 section.on-light .shrow .d{color:var(--ink)}
 section.on-light .shrow .t{color:#6c727c}
 section.on-light .benlist li{color:#4a4f57}
 section.on-light .benlist li b{color:var(--ink)!important}
 section.on-light .benlist li svg{color:var(--green)}
-section.on-light .pricecard{background:#fff;border-color:#ddd7cc}
+section.on-light .pricecard{background:#fff;border-color:#d0d0d0}
 section.on-light .pricecard .ph{color:#6c727c}
 section.on-light .pricecard .big{color:var(--ink)}
 section.on-light .pricecard .small{color:#6c727c}
@@ -302,7 +302,7 @@ section.on-light .ring{background:radial-gradient(circle,#fff,#ece8e0);border-co
 .phero.bw-light{background:
   radial-gradient(110% 90% at 82% 0%,rgba(0,0,0,.05),transparent 55%),
   linear-gradient(180deg,#fff,var(--bone))}
-.phero.bw-light .btn-ghost{border-color:#cfc9be;color:var(--ink)}
+.phero.bw-light .btn-ghost{border-color:#c0c0c0;color:var(--ink)}
 .phero.bw-light .btn-ghost:hover{border-color:var(--green);color:var(--green)}
 @media(max-width:820px){.pad-lg [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
 </style>
