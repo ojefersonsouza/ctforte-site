@@ -64,7 +64,9 @@ a{color:inherit;text-decoration:none}
 [data-page="sobre"] p{margin:0 0 1.05em}
 [data-page="sobre"] p:last-child{margin-bottom:0}
 [data-page="sobre"] .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
-[data-page="sobre"] .band{padding-block:clamp(64px,8.5vw,120px);position:relative}
+[data-page="sobre"] .band{padding-block:70px;position:relative}
+@media(max-width:1024px){[data-page="sobre"] .band{padding-block:50px}}
+@media(max-width:600px){[data-page="sobre"] .band{padding-block:35px}}
 [data-page="sobre"] .btn{display:inline-flex;align-items:center;gap:11px;font-family:var(--d);font-variation-settings:"wdth" 96,"wght" 800;text-transform:uppercase;font-size:13px;letter-spacing:.11em;padding:16px 26px;border:1px solid transparent;transition:background .18s,color .18s,border-color .18s;cursor:pointer}
 [data-page="sobre"] .btn .ar{font-family:var(--b);font-weight:400;font-size:15px;line-height:1}
 [data-page="sobre"] .btn-p{background:var(--red);color:#fff}

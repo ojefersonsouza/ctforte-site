@@ -64,7 +64,9 @@ a{color:inherit;text-decoration:none}
 [data-page="jiu"] p{margin:0 0 1.05em}
 [data-page="jiu"] p:last-child{margin-bottom:0}
 [data-page="jiu"] .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
-[data-page="jiu"] .band{padding-block:clamp(64px,9vw,132px)}
+[data-page="jiu"] .band{padding-block:70px}
+@media(max-width:1024px){[data-page="jiu"] .band{padding-block:50px}}
+@media(max-width:600px){[data-page="jiu"] .band{padding-block:35px}}
 [data-page="jiu"] .hair{height:1px;background:var(--line);border:0;margin:0}
 [data-page="jiu"] /* botões */
 .btn{display:inline-flex;align-items:center;gap:11px;font-family:var(--b);font-weight:700;text-transform:uppercase;font-size:11.5px;letter-spacing:.18em;padding:16px 26px;border:1px solid var(--ink);transition:background .18s,color .18s,border-color .18s;cursor:pointer}
