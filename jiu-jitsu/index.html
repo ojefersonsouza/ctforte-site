@@ -342,6 +342,15 @@ a{color:inherit;text-decoration:none}
 .feito-por svg{vertical-align:middle;opacity:.5}
 .ft-ic{vertical-align:-3px;margin-right:8px;color:#D81F26;flex-shrink:0}
 .ft ul li,.ft ul a{display:flex;align-items:flex-start;gap:0}
+@media(max-width:768px){
+[data-page="jiu"] .d-xl{font-size:clamp(32px,8vw,48px)}
+[data-page="jiu"] .d-lg{font-size:clamp(26px,6vw,36px)}
+[data-page="jiu"] .d-md{font-size:clamp(22px,5vw,28px)}
+[data-page="jiu"] .hero{min-height:auto;display:flex;flex-direction:column;background:#000}
+[data-page="jiu"] .hero>img.bg{position:relative;width:100%;height:auto;object-fit:contain;aspect-ratio:16/9}
+[data-page="jiu"] .hero .veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.1) 0%,rgba(0,0,0,.3) 100%);z-index:1}
+[data-page="jiu"] .hero-in{padding-top:200px;padding-bottom:50px;position:relative;z-index:2;margin-top:-200px}
+}
 </style>
 </head>
 <body data-active="jiu">
