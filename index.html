@@ -125,7 +125,7 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="home"] .hero .glow{position:absolute;right:-6%;top:-28%;width:78%;height:150%;z-index:0;background:radial-gradient(48% 46% at 56% 46%,var(--red-glow),transparent 72%)}
 [data-page="home"] .hero .ghost{position:absolute;right:-9vw;top:50%;transform:translateY(-50%);z-index:0;width:min(62vw,760px);opacity:.05;pointer-events:none}
 [data-page="home"] .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(20px,4vw,56px);align-items:center;padding-block:clamp(40px,6vw,72px)}
-[data-page="home"] .hero-logo{display:none}
+[data-page="home"] .hero-logo{display:block;width:54px;height:54px;object-fit:contain;margin:0 0 18px}
 [data-page="home"] .hero-txt{}
 [data-page="home"] .kicker{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line-2);padding:7px 14px;margin-bottom:26px;font-family:var(--d);font-variation-settings:"wdth" 88,"wght" 600;text-transform:uppercase;font-size:10.5px;letter-spacing:.24em;color:var(--mute)}
 [data-page="home"] .dot{width:6px;height:6px;background:var(--red);flex:0 0 6px}
@@ -297,6 +297,7 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="home"] .maplink{position:relative;z-index:2;background:var(--paper);color:var(--ink);font-family:var(--d);font-variation-settings:"wdth" 94,"wght" 800;text-transform:uppercase;font-size:12px;letter-spacing:.12em;padding:13px 20px}
 [data-page="home"] .maplink:hover{background:var(--red);color:#fff}
 @media(max-width:860px){[data-page="home"] .cont-in{grid-template-columns:1fr}}
+@media(min-width:860px){[data-page="home"] .contato h2{white-space:nowrap}}
 [data-page="home"] /* cta final */
 .final{position:relative;overflow:hidden;border-top:1px solid var(--line)}
 [data-page="home"] .final img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;filter:grayscale(.4)}
@@ -342,7 +343,7 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="home"] .band>.wrap>h2.d,[data-page="home"] .band>.wrap>.lead,[data-page="home"] .band>.wrap>h2.d+.lead{text-align:center;margin-inline:auto}
 [data-page="home"] .band>.wrap>.lead{max-width:64ch}
 [data-page="home"] .final-in,[data-page="home"] .cta-in{text-align:center}
-@media(max-width:900px){[data-page="home"] .hero-logo{display:block;width:54px;height:54px;object-fit:contain;margin:0 auto 18px}
+@media(max-width:900px){[data-page="home"] .hero-logo{margin:0 auto 18px}
 [data-page="home"] .hero-in,[data-page="home"] .hero-txt{text-align:center}
 [data-page="home"] .hero-in h1,[data-page="home"] .hero-in .lead,[data-page="home"] .hero-txt h1,[data-page="home"] .hero-txt .lead{margin-inline:auto}
 [data-page="home"] .hero h1{font-size:clamp(32px,7.5vw,46px)}
@@ -467,7 +468,6 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
         <a class="btn btn-p zap" href="https://wa.me/5511998500816?text=Oi!%20Quero%20agendar%20uma%20aula%20experimental%20no%20CT%20Forte." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false"><path d="M12 3.3c-4.7 0-8.6 3.3-8.6 7.4 0 2.2 1.1 4.2 2.9 5.5l-.9 3.5 3.7-1.9c.9.2 1.9.3 2.9.3 4.7 0 8.6-3.3 8.6-7.4S16.7 3.3 12 3.3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Agendar aula experimental <span class="ar">→</span></a>
         <a class="btn btn-g" href="/#h-modalidades">Ver modalidades</a>
       </div>
-      <p class="fineprint"><i class="dot"></i> Primeira aula é experimental e sem compromisso</p>
     </div>
     <div class="hero-fig">
       <div class="colagem">
@@ -498,7 +498,7 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
           <div class="mtop"><span class="num">01</span><span class="sub">Em pé · Arte das 8 armas</span></div>
           <h3 class="d d-md">Muay Thai</h3>
           <p>Socos, chutes, joelhadas e cotoveladas. Condicionamento pesado, defesa pessoal real e técnica que evolui do primeiro chute ao ringue.</p>
-          <div class="chips"><span class="chip">Condicionamento</span><span class="chip">Defesa pessoal</span><span class="chip">Clinch</span><span class="chip">Graduação por cordas</span></div>
+          <div class="chips"><span class="chip">Condicionamento</span><span class="chip">Defesa pessoal</span><span class="chip">Competição</span></div>
           <a class="modlink" href="/muay-thai">Saber mais <span>→</span></a>
         </div>
       </article>
