@@ -33,7 +33,18 @@ a{color:inherit;text-decoration:none}
 #topo .cta{display:flex;align-items:center;gap:8px}
 #topo .btn-topo{background:#25D366;color:#06240F;display:inline-flex;align-items:center;gap:9px;font-family:"Archivo","Arial Narrow",Impact,sans-serif;font-variation-settings:"wdth" 96,"wght" 800;text-transform:uppercase;font-size:12px;letter-spacing:.11em;padding:12px 20px;border-radius:12px;transition:background .18s}
 #topo .btn-topo:hover{background:#1FBE5A}
-@media(max-width:1020px){#topo nav{display:none}}
+#topo .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;width:40px;height:40px;position:relative}
+#topo .hamburger span{display:block;width:22px;height:2px;background:#F2F1F0;margin:0 auto;transition:transform .3s ease,opacity .3s ease}
+#topo .hamburger span:nth-child(1){transform:translateY(-6px)}
+#topo .hamburger span:nth-child(3){transform:translateY(6px)}
+#topo .hamburger.open span:nth-child(1){transform:rotate(45deg)}
+#topo .hamburger.open span:nth-child(2){opacity:0}
+#topo .hamburger.open span:nth-child(3){transform:rotate(-45deg)}
+#topo .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(8,8,10,.97);backdrop-filter:blur(14px);z-index:69;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;transition:opacity .3s ease}
+#topo .mobile-menu.open{opacity:1}
+#topo .mobile-menu a{font-family:"Archivo","Arial Narrow",Impact,sans-serif;font-variation-settings:"wdth" 90,"wght" 600;text-transform:uppercase;font-size:18px;letter-spacing:.14em;color:#8E888A;transition:color .16s}
+#topo .mobile-menu a:hover,#topo .mobile-menu a.on{color:#F2F1F0}
+@media(max-width:1020px){#topo nav{display:none}#topo .hamburger{display:grid;place-items:center}}
 @media(max-width:520px){#topo .cta{display:none}}
 
 /* ===== SOBRE ===== */
@@ -253,6 +264,15 @@ a{color:inherit;text-decoration:none}
     <div class="cta">
       <a class="btn-topo" href="https://wa.me/5511998500816?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20no%20CT%20Forte." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 3.3c-4.7 0-8.6 3.3-8.6 7.4 0 2.2 1.1 4.2 2.9 5.5l-.9 3.5 3.7-1.9c.9.2 1.9.3 2.9.3 4.7 0 8.6-3.3 8.6-7.4S16.7 3.3 12 3.3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Agendar aula</a>
     </div>
+    <button class="hamburger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu">
+    <a href="/">Início</a>
+    <a class="on" href="/sobre-nos">Sobre nós</a>
+    <a href="/muay-thai">Muay Thai</a>
+    <a href="/jiu-jitsu">Jiu-Jitsu</a>
+    <a href="/#h-contato">Contato</a>
+    <a class="btn-topo" href="https://wa.me/5511998500816?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20no%20CT%20Forte." target="_blank" rel="noopener">Agendar aula</a>
   </div>
 </header>
 <main data-page="sobre">
@@ -463,4 +483,5 @@ a{color:inherit;text-decoration:none}
 </main>
 <script>
 (function(){Array.prototype.forEach.call(document.querySelectorAll(".carrossel"),function(c){var trilho=c.querySelector("[data-carrossel]");if(!trilho)return;Array.prototype.forEach.call(c.querySelectorAll(".seta"),function(b){b.addEventListener("click",function(){var f=trilho.querySelector("figure");var passo=f?f.getBoundingClientRect().width+12:300;trilho.scrollBy({left:passo*parseInt(b.getAttribute("data-dir"),10),behavior:"smooth"});});});});})();
+(function(){var btn=document.querySelector("#topo .hamburger");var menu=document.querySelector("#topo .mobile-menu");if(!btn||!menu)return;btn.addEventListener("click",function(){btn.classList.toggle("open");var isOpen=btn.classList.contains("open");if(isOpen){menu.style.display="flex";requestAnimationFrame(function(){menu.classList.add("open");});}else{menu.classList.remove("open");setTimeout(function(){menu.style.display="none";},300);}document.body.style.overflow=isOpen?"hidden":"";});menu.addEventListener("click",function(e){if(e.target.tagName==="A"){btn.classList.remove("open");menu.classList.remove("open");setTimeout(function(){menu.style.display="none";},300);document.body.style.overflow="";}});})();
 </script>
