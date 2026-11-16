@@ -335,6 +335,8 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="home"] .info .v{font-family:var(--hd);font-weight:600;font-size:21px;letter-spacing:-.02em}
 [data-page="home"] .info .v small{font-family:var(--bd);font-weight:400;letter-spacing:0}
 [data-page="home"] .mapwrap{border:0}
+/* mapa com a mesma altura do conteúdo ao lado (desktop) */
+@media(min-width:861px){[data-page="home"] .cont-in{align-items:stretch}[data-page="home"] .mapwrap{height:100%;display:flex}[data-page="home"] .mapwrap iframe{height:100%;min-height:0;aspect-ratio:auto;flex:1}}
 
 /* chamada final: linhas grandes deslocadas, foto P&B e risco desenhado */
 [data-page] .final{border-top:0}
@@ -360,6 +362,17 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page] .final .final-in .acts{justify-content:flex-start}
 [data-page] .final .final-in .lead{margin-inline:clamp(28px,12vw,190px) 0}
 @media(max-width:700px){[data-page] .final .final-in .lead{margin-inline:0}}
+
+/* chamadas finais: centralizadas e paradas; o único efeito é o risco desenhado embaixo */
+[data-page] .final .wrap.final-in,[data-page] .cta .cta-in{text-align:center}
+[data-page] .final h2.d,[data-page] .cta h2.d{margin-inline:auto}
+[data-page] .final h2.d .v2-l:nth-child(2){padding-left:0}
+[data-page] .final h2.d .v2-l{transform:none!important}
+[data-page] .final .final-in .lead,[data-page] .final .lead{margin:clamp(24px,2.6vw,36px) auto 0}
+[data-page] .final .final-in .acts,[data-page] .final .acts{justify-content:center;margin-left:0}
+.v2-js [data-page] :is(.final,.cta) .v2-l>span{transform:none;transition:none}
+.v2-js [data-page] :is(.final,.cta) :is(.lead,.acts,.hero-acts){opacity:1;translate:none;transition:none}
+[data-page] :is(.final,.cta) .v2-risco path{transition-delay:.3s}
 
 /* rodapé: marca grande ao fundo (estático) */
 .ft{overflow:hidden}
@@ -748,9 +761,6 @@ var alvo=":is(h1.d,h2.d,.lead,.acts,.hero-acts,.mod,.box,.bio-media,.bio-creds l
 var els=page.querySelectorAll(alvo);
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px",threshold:.12});
 each(els,function(el){var irm=el.parentNode?Array.prototype.filter.call(el.parentNode.children,function(c){return c.matches(alvo);}):[];var i=irm.indexOf(el);if(i>0&&!/^H[12]$/.test(el.tagName))el.style.setProperty("--i",Math.min(i,6));io.observe(el);});
-/* chamada final: as linhas grandes se afastam/aproximam com a rolagem */
-var fin=page.querySelector(".final");var lin=fin?fin.querySelectorAll("h2.d .v2-l"):[];
-if(lin.length>1){var tk=0;var mover=function(){tk=0;var r=fin.getBoundingClientRect(),vh=innerHeight;if(r.bottom<0||r.top>vh)return;var p=Math.max(0,Math.min(1,(vh-r.top)/(vh+r.height)));var d=(p-.5)*10;lin[0].style.transform="translate3d("+(-d)+"vw,0,0)";lin[1].style.transform="translate3d("+d+"vw,0,0)";};addEventListener("scroll",function(){if(!tk)tk=requestAnimationFrame(mover);},{passive:true});mover();}
 window.__v2ok=1;
 })();
 </script>
