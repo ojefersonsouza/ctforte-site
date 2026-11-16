@@ -401,29 +401,10 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 
 /* cabeçalho */
 #topo{background:rgba(8,8,10,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:rgba(255,255,255,.07)}
-#topo .marca span,#topo nav a,#topo .btn-topo,.mobile-menu a{font-family:"General Sans","Archivo",sans-serif;font-variation-settings:normal}
+#topo .marca span,#topo nav a,.mobile-menu a:not(.btn-topo){font-family:"General Sans","Archivo",sans-serif;font-variation-settings:normal}
 #topo .marca span{font-weight:700;letter-spacing:-.02em;font-size:18px}
 #topo nav a{font-weight:600;letter-spacing:.06em;font-size:12.5px}
-#topo .btn-topo{font-weight:700;letter-spacing:.02em;font-size:13px;border-radius:12px}
 .mobile-menu a{font-weight:600;letter-spacing:.04em;font-size:20px}
-
-/* botões */
-[data-page] .btn{font-family:var(--hd);font-weight:700;font-variation-settings:normal;text-transform:uppercase;letter-spacing:.005em;font-size:15px;line-height:1;border-radius:var(--r-btn);padding:18px 24px;transition:background .2s,color .2s,border-color .2s,transform .25s cubic-bezier(.2,.7,.2,1)}
-[data-page] .btn:hover{transform:translateY(-2px)}
-[data-page] .btn-g{border:1.5px solid rgba(241,241,241,.22);background:rgba(255,255,255,.04);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-[data-page] .btn.v2-faixa{padding:6px 6px 6px 22px;gap:18px}
-[data-page] .btn.v2-faixa .ic{margin-right:-8px}
-[data-page] .faixa{position:relative;display:inline-flex;align-items:center;justify-content:flex-end;width:74px;height:44px;border-radius:10px;padding-right:13px;overflow:hidden;background:#F1F1F1;color:#111111;animation:v2-faixa 9s infinite}
-[data-page] .faixa i{position:absolute;left:12px;top:0;bottom:0;width:16px;background-color:#111111;background-image:linear-gradient(90deg,transparent 3px,#F1F1F1 3px 5px,transparent 5px 9px,#F1F1F1 9px 11px,transparent 11px);animation:v2-ponta 9s infinite}
-[data-page] .faixa svg{position:relative;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
-[data-page] .btn.v2-faixa:hover .faixa svg{transform:translateX(4px)}
-@keyframes v2-faixa{0%,15%{background:#F1F1F1;color:#111111}20%,35%{background:#1F4FB7;color:#F1F1F1}40%,55%{background:#9804AF;color:#F1F1F1}60%,75%{background:#683816;color:#F1F1F1}80%,100%{background:#111111;color:#F1F1F1}}
-@keyframes v2-ponta{0%,75%{background-color:#111111}80%,100%{background-color:#D81F26}}
-@media(max-width:420px){[data-page] .btn{font-size:13.5px}[data-page] .btn.v2-faixa{padding-left:16px;gap:12px}[data-page] .faixa{width:64px}}
-/* muay thai: cores das cordas (prajioud) */
-[data-page="thai"] .faixa{animation-name:v2-corda}
-[data-page="thai"] .faixa i{animation:none;background-color:transparent;background-image:linear-gradient(90deg,transparent 3px,rgba(17,17,17,.55) 3px 5px,transparent 5px 9px,rgba(17,17,17,.55) 9px 11px,transparent 11px)}
-@keyframes v2-corda{0%,12%{background:#F1F1F1;color:#111111}16%,28%{background:#F2C500;color:#111111}32%,44%{background:#E86A10;color:#111111}48%,60%{background:#2E9B4A;color:#F1F1F1}64%,76%{background:#1F4FB7;color:#F1F1F1}80%,100%{background:#D81F26;color:#F1F1F1}}
 
 /* cards e fotos arredondados */
 [data-page] .mshot,[data-page] .colagem figure,[data-page] .estr figure,[data-page] .hist figure,[data-page] .retratos figure,[data-page] .trilho figure,[data-page] .eqgrid figure,[data-page] .mapwrap,[data-page] .mapa,[data-page] .bio-media img,[data-page] .prof-media img,[data-page] .currfig img{border-radius:var(--r-card)}
@@ -442,12 +423,10 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="home"] .hero .glow{z-index:1}
 [data-page="home"] .hero-in{z-index:2}
 [data-page="home"] .hero .lead{color:rgba(241,241,241,.78)}
-[data-page="home"] .colagem{gap:14px;transform:rotate(-4deg)}
 [data-page="home"] .colagem figure{border:0;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
-[data-page="home"] .colagem figure:nth-child(even){transform:translateY(34px)}
 [data-page="home"] .colagem figcaption{border:0;border-radius:0 12px 0 0;font-family:var(--hd);font-weight:600;font-variation-settings:normal;letter-spacing:.08em}
 [data-page="home"] .colagem figcaption i{background:var(--acc)}
-@media(max-width:900px){[data-page="home"] .hero{min-height:0}[data-page="home"] .colagem{transform:none}[data-page="home"] .colagem figure:nth-child(even){transform:none}}
+@media(max-width:900px){[data-page="home"] .hero{min-height:0}}
 
 /* títulos de seção à esquerda, texto de apoio ao lado */
 [data-page] .shead{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,72px);align-items:end;text-align:left;max-width:none;margin-inline:0}
@@ -808,7 +787,7 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
   </div>
   <div class="wrap ft-bot">
     <span>© 2026 Centro de Treinamento Forte — Jarinu/SP</span>
-    <span class="feito-por">Feito por <svg width="80" height="13" viewBox="0 0 107 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.00541435 8.31783C0.00541435 3.95584 3.24644 0 9.6581 0C16.0698 0 18.2846 3.09752 18.2846 5.93511C18.2846 6.02988 18.2846 6.22213 18.2602 6.48206H16.1618C16.1862 6.24379 16.1862 6.14902 16.1862 6.00552C16.1862 4.02624 14.4696 1.95491 9.6554 1.95491C4.84124 1.95491 2.24192 4.8629 2.24192 8.3422C2.24192 11.5589 4.62463 14.299 9.6554 14.299C14.6862 14.299 16.2322 11.9163 16.2322 10.1996V10.1049H8.91622V8.3422H18.4741V15.9696H16.3757C16.4245 15.3983 16.5192 13.9686 16.5653 12.7746H16.5409C15.7773 15.2304 13.086 16.2539 9.65269 16.2539C2.85925 16.2539 0 12.3224 0 8.31783H0.00541435Z" fill="currentColor"/><path d="M21.8098 0.284204H31.6764C36.4202 0.284204 38.589 2.04687 38.589 4.81136C38.589 6.62276 37.4924 8.05239 35.5862 8.50457V8.5533C37.6115 8.93508 38.4942 10.3891 38.4942 12.6039V15.9641H36.255V12.6039C36.255 10.603 35.1584 9.57678 32.6566 9.57678H24.0517V15.9641H21.8125V0.281494L21.8098 0.284204ZM32.2504 7.81683C35.1097 7.81683 36.4933 6.74461 36.4933 5.07671C36.4933 3.40881 35.0149 2.24182 31.3704 2.24182H24.0544V7.81953H32.2531L32.2504 7.81683Z" fill="currentColor"/><path d="M41.4236 8.05519C41.4236 3.5497 44.7838 0 51.3849 0C57.9861 0 61.3463 3.55241 61.3463 8.05519C61.3463 12.558 58.2 16.2539 51.3849 16.2539C44.5698 16.2539 41.4236 12.9181 41.4236 8.05519ZM59.1098 8.05519C59.1098 4.62463 56.4888 1.95491 51.3876 1.95491C46.2865 1.95491 43.6655 4.62463 43.6655 8.05519C43.6655 11.8215 46.2621 14.299 51.3876 14.299C56.5132 14.299 59.1098 11.6293 59.1098 8.05519Z" fill="currentColor"/><path d="M92.4111 0.284241H106.759V2.23915H94.653V7.19681H104.376V8.95948H94.653V14.0119H107V15.9668H92.4138V0.284241H92.4111Z" fill="currentColor"/><path d="M83.703 0.284241L77.573 13.3621L75.1063 8.10116L75.8319 6.55782L77.3103 3.42238H75.8915C75.2498 3.42238 74.6677 3.79333 74.3942 4.37276L73.877 5.47477L73.3707 6.55511L73.5927 5.10923L73.6144 5.03342L70.7687 0.284241H69.5882L72.6478 8.09846L71.9384 9.61202L66.8859 0.284241H65.6838L70.7118 12.2276L70.4302 12.8287L69.9997 13.7466L63.0032 0.284241H61.801L68.5945 15.9668H68.9681H71.3996L71.9357 14.8269L72.0277 14.6347L72.8806 12.8287L73.1487 12.2601L73.1649 12.2276L73.8797 10.7113L76.3545 15.9668H78.7968L86.1859 0.284241H83.7084H83.703Z" fill="currentColor"/><path d="M87.5055 0.284241L80.157 15.9533L80.1651 15.9668H82.5938L89.983 0.284241H87.5055Z" fill="currentColor"/></svg></span>
+    <a class="feito-por" href="https://growe.com.br" target="_blank" rel="noopener">Feito por <svg width="80" height="13" viewBox="0 0 107 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.00541435 8.31783C0.00541435 3.95584 3.24644 0 9.6581 0C16.0698 0 18.2846 3.09752 18.2846 5.93511C18.2846 6.02988 18.2846 6.22213 18.2602 6.48206H16.1618C16.1862 6.24379 16.1862 6.14902 16.1862 6.00552C16.1862 4.02624 14.4696 1.95491 9.6554 1.95491C4.84124 1.95491 2.24192 4.8629 2.24192 8.3422C2.24192 11.5589 4.62463 14.299 9.6554 14.299C14.6862 14.299 16.2322 11.9163 16.2322 10.1996V10.1049H8.91622V8.3422H18.4741V15.9696H16.3757C16.4245 15.3983 16.5192 13.9686 16.5653 12.7746H16.5409C15.7773 15.2304 13.086 16.2539 9.65269 16.2539C2.85925 16.2539 0 12.3224 0 8.31783H0.00541435Z" fill="currentColor"/><path d="M21.8098 0.284204H31.6764C36.4202 0.284204 38.589 2.04687 38.589 4.81136C38.589 6.62276 37.4924 8.05239 35.5862 8.50457V8.5533C37.6115 8.93508 38.4942 10.3891 38.4942 12.6039V15.9641H36.255V12.6039C36.255 10.603 35.1584 9.57678 32.6566 9.57678H24.0517V15.9641H21.8125V0.281494L21.8098 0.284204ZM32.2504 7.81683C35.1097 7.81683 36.4933 6.74461 36.4933 5.07671C36.4933 3.40881 35.0149 2.24182 31.3704 2.24182H24.0544V7.81953H32.2531L32.2504 7.81683Z" fill="currentColor"/><path d="M41.4236 8.05519C41.4236 3.5497 44.7838 0 51.3849 0C57.9861 0 61.3463 3.55241 61.3463 8.05519C61.3463 12.558 58.2 16.2539 51.3849 16.2539C44.5698 16.2539 41.4236 12.9181 41.4236 8.05519ZM59.1098 8.05519C59.1098 4.62463 56.4888 1.95491 51.3876 1.95491C46.2865 1.95491 43.6655 4.62463 43.6655 8.05519C43.6655 11.8215 46.2621 14.299 51.3876 14.299C56.5132 14.299 59.1098 11.6293 59.1098 8.05519Z" fill="currentColor"/><path d="M92.4111 0.284241H106.759V2.23915H94.653V7.19681H104.376V8.95948H94.653V14.0119H107V15.9668H92.4138V0.284241H92.4111Z" fill="currentColor"/><path d="M83.703 0.284241L77.573 13.3621L75.1063 8.10116L75.8319 6.55782L77.3103 3.42238H75.8915C75.2498 3.42238 74.6677 3.79333 74.3942 4.37276L73.877 5.47477L73.3707 6.55511L73.5927 5.10923L73.6144 5.03342L70.7687 0.284241H69.5882L72.6478 8.09846L71.9384 9.61202L66.8859 0.284241H65.6838L70.7118 12.2276L70.4302 12.8287L69.9997 13.7466L63.0032 0.284241H61.801L68.5945 15.9668H68.9681H71.3996L71.9357 14.8269L72.0277 14.6347L72.8806 12.8287L73.1487 12.2601L73.1649 12.2276L73.8797 10.7113L76.3545 15.9668H78.7968L86.1859 0.284241H83.7084H83.703Z" fill="currentColor"/><path d="M87.5055 0.284241L80.157 15.9533L80.1651 15.9668H82.5938L89.983 0.284241H87.5055Z" fill="currentColor"/></svg></a>
   </div>
 </footer>
 </main>
@@ -842,8 +821,6 @@ Array.prototype.forEach.call(document.querySelectorAll(".carrossel"),function(c)
 (function(){
 var page=document.querySelector("[data-page]");if(!page)return;
 var R=document.documentElement,each=function(l,f){Array.prototype.forEach.call(l,f);};
-/* faixa de graduação no botão de agendar (cores das faixas; no Muay Thai, das cordas) */
-each(document.querySelectorAll(".btn.zap"),function(b){if(b.querySelector(".faixa"))return;var ar=b.querySelector(".ar");if(ar)ar.parentNode.removeChild(ar);var f=document.createElement("span");f.className="faixa";f.setAttribute("aria-hidden","true");f.innerHTML="<i></i><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M4 12h15M13 6l6 6-6 6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>";b.appendChild(f);b.classList.add("v2-faixa");});
 /* home: foto de fundo no hero, reaproveitando a primeira foto da colagem */
 var hero=page.querySelector(".hero");
 if(page.getAttribute("data-page")==="home"&&hero&&!hero.querySelector(".v2-bg")){var src=hero.querySelector(".colagem img");if(src){var bg=document.createElement("img");bg.className="v2-bg";bg.alt="";bg.setAttribute("aria-hidden","true");bg.src=src.src;hero.insertBefore(bg,hero.firstChild);}}
