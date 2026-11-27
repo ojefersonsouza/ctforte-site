@@ -647,9 +647,10 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="thai"] .cdots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:rgba(244,241,233,.28);cursor:pointer;transition:width .4s ease,background-color .4s ease}
 [data-page="thai"] .cdots button.on{width:26px;background:var(--gold)}
 /* thai: chamada final cinza escuro, sem luz amarela */
-[data-page="thai"] .cta{background:#141416}
-[data-page="thai"] .cta img{opacity:.12!important}
-[data-page="thai"] .cta .veil{background:rgba(20,20,22,.72)!important}
+[data-page="thai"] .cta{background:#111113!important}
+[data-page="thai"] .cta img{opacity:.07!important;filter:grayscale(1)}
+[data-page="thai"] .cta .veil{background:rgba(17,17,19,.6)!important}
+[data-page="thai"] .cta::after{display:none!important}
 @media(min-width:901px){[data-page] .hero.hb-on .hero-in>.hero-acts{max-width:none}[data-page] .hero.hb-on .hero-acts{flex-wrap:nowrap}[data-page] .hero.hb-on .hero-in{padding-block:clamp(40px,4.5vw,64px)}}
 /* ==== BANNER HERO FIM ==== */
 
