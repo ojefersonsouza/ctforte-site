@@ -739,10 +739,6 @@ footer .ft-ic{flex:none;width:16px;height:16px;margin:.26em 10px 0 0!important;v
 @keyframes pl-out{to{transform:translateY(100%)}}
 html.no-intro .preloader{display:none}
 @media (prefers-reduced-motion: reduce){.preloader{display:none}}
-/* conteúdo do topo entra depois da cortina */
-html.intro-on [data-page] .hero :is(.v2-l>span,.lead,.acts,.hero-acts,.colagem figure,.hero-logo){transition-delay:calc(2.45s + var(--i,0) * 90ms)!important}
-html.intro-on [data-page] .hero :is(.hb-badge,.hb-selo,.thai.sm){opacity:0;animation:intro-up .9s cubic-bezier(.16,1,.3,1) 2.4s forwards}
-@keyframes intro-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 /* efeitos de rolagem (movimento, os mesmos da Higiemax) */
 main > section{position:relative}
 .js main > section:not(.hero):not(.final):not(.cta) :is(h2.d, .lead, .pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){opacity:0}
@@ -752,6 +748,9 @@ main > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, 
 main[data-page="thai"] > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){--cortina-cor:var(--gold,#E0A400)}
 main[data-page="jiu"] > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){--cortina-cor:currentColor}
 html.intro-on body:has(main[data-page="thai"]) .pl-anel circle{stroke:#E0A400}
+/* topo sem animação de entrada: tudo aparece na hora */
+.v2-js main[data-page] > section.hero :is(h1.d,h2.d){opacity:1!important}
+.v2-js main[data-page] > section.hero :is(.lead,.acts,.hero-acts,.mod,.box,.chips,.colagem figure,.hero-logo,.trilha,.note){opacity:1!important;translate:none!important;transition:none!important}
 /* ==== INTRO E MOVIMENTO FIM ==== */
 
 /* ==== MENU CELULAR INICIO ==== */
@@ -1020,10 +1019,10 @@ var waB=document.querySelector(".wa-flut");if(waB){var waC=function(){var h=page
 var calmo=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(calmo||!("IntersectionObserver" in window)){R.classList.remove("v2-js");window.__v2ok=1;return;}
 /* títulos: cada linha sobe de dentro de uma máscara */
-each(page.querySelectorAll(".hero h1.d,.hero h2.d,.final h2.d,.cta h2.d"),function(h){var p=h.innerHTML.split(/<br\s*\/?>/i);h.innerHTML=p.map(function(t,i){return"<span class=\"v2-l\"><span style=\"--i:"+i+"\">"+t.trim()+"</span></span>";}).join("");h.classList.add("v2-split");});
+each(page.querySelectorAll(".final h2.d,.cta h2.d"),function(h){var p=h.innerHTML.split(/<br\s*\/?>/i);h.innerHTML=p.map(function(t,i){return"<span class=\"v2-l\"><span style=\"--i:"+i+"\">"+t.trim()+"</span></span>";}).join("");h.classList.add("v2-split");});
 /* risco desenhado sob a última linha da chamada final */
 each(page.querySelectorAll(".final h2.d,.cta h2.d"),function(h){var ls=h.querySelectorAll(".v2-l>span");var u=ls[ls.length-1];if(!u)return;u.insertAdjacentHTML("beforeend","<svg class=\"v2-risco\" viewBox=\"0 0 300 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M3 13C70 6 160 3 297 7\"/><path pathLength=\"1\" d=\"M40 17C120 12 210 12 262 15\" style=\"transition-delay:1.1s\"/></svg>");});
-var alvo=":is(.hero h1.d,.hero h2.d,.final h2.d,.cta h2.d,.hero .lead,.final .lead,.cta .lead,.acts,.hero-acts,.mod,.box,.bio-media,.bio-creds li,.estr figure,.info li,.mapwrap,.chips,.colagem figure,.step,.stp,.val,.valor,.value,.arma,.pub,.obj,.turma,.cordabox,.wall figure,.depo-card,.hist figure,.retratos figure,.eqgrid figure,.note,.modlink,.hero-logo,.trilha,.mtop .num)";
+var alvo=":is(.final h2.d,.cta h2.d,.final .lead,.cta .lead,.acts,.hero-acts,.mod,.box,.bio-media,.bio-creds li,.estr figure,.info li,.mapwrap,.chips,.colagem figure,.step,.stp,.val,.valor,.value,.arma,.pub,.obj,.turma,.cordabox,.wall figure,.depo-card,.hist figure,.retratos figure,.eqgrid figure,.note,.modlink,.hero-logo,.trilha,.mtop .num)";
 var els=page.querySelectorAll(alvo);
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px",threshold:.12});
 each(els,function(el){var irm=el.parentNode?Array.prototype.filter.call(el.parentNode.children,function(c){return c.matches(alvo);}):[];var i=irm.indexOf(el);if(i>0&&!/^H[12]$/.test(el.tagName))el.style.setProperty("--i",Math.min(i,6));io.observe(el);});
