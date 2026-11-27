@@ -620,6 +620,11 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="jiu"] .pbox-d{font-size:15px;line-height:1.6;color:var(--ink-2);margin:0}
 @media(max-width:900px){[data-page="jiu"] .progbox{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){[data-page="jiu"] .progbox{grid-template-columns:1fr;gap:12px}[data-page="jiu"] .pbox{padding:22px 20px}}
+/* jiu: valores da True */
+@media(min-width:1024px){[data-page="jiu"] .true-in.centralizado .lead{max-width:none!important;white-space:nowrap}}
+[data-page="jiu"] .value{border:1px solid rgba(255,255,255,.16)}
+.v2-js [data-page="jiu"] .value,[data-page="jiu"] .value{transition:opacity .9s cubic-bezier(.2,.7,.2,1) calc(var(--i,0)*90ms),translate .9s cubic-bezier(.2,.7,.2,1) calc(var(--i,0)*90ms),transform .5s cubic-bezier(.22,.61,.36,1),border-color .5s ease}
+[data-page="jiu"] .value:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.34)}
 /* ==== BANNER HERO FIM ==== */
 </style>
 <!-- V2 HEAD -->
