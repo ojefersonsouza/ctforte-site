@@ -453,6 +453,16 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 footer li,footer li>a{align-items:flex-start!important}
 footer .ft-ic{flex:none;width:16px;height:16px;margin:.26em 10px 0 0!important;vertical-align:top!important}
 /* ==== RODAPE ICONES FIM ==== */
+
+/* ==== SOBRE HERO MOBILE INICIO ==== */
+@media(max-width:900px){
+[data-page="sobre"] .hero{display:block;min-height:0!important;background:#08080A}
+[data-page="sobre"] .hero>img.bg{position:relative;inset:auto;display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent);mask-image:linear-gradient(to bottom,#000 62%,transparent)}
+[data-page="sobre"] .hero .veil{display:none}
+[data-page="sobre"] .hero::after{display:none}
+[data-page="sobre"] .hero-in{margin-top:-24px;padding-top:0!important;padding-bottom:clamp(44px,10vw,60px)!important}
+}
+/* ==== SOBRE HERO MOBILE FIM ==== */
 </style>
 <!-- V2 HEAD -->
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
