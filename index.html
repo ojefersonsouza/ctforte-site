@@ -748,8 +748,10 @@ main > section{position:relative}
 .js main > section:not(.hero):not(.final):not(.cta) :is(h2.d, .lead, .pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){opacity:0}
 .v2-js main[data-page] > section:not(.hero):not(.final):not(.cta) .lead:not(.in){translate:none!important;transition:none!important}
 main > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){--cortina-cor:#D81F26}
-[data-page="thai"] main > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .box-t){--cortina-cor:#E0A400}
 @media (prefers-reduced-motion: reduce){.js main *{opacity:1!important}}
+main[data-page="thai"] > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){--cortina-cor:var(--gold,#E0A400)}
+main[data-page="jiu"] > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){--cortina-cor:currentColor}
+html.intro-on body:has(main[data-page="thai"]) .pl-anel circle{stroke:#E0A400}
 /* ==== INTRO E MOVIMENTO FIM ==== */
 
 /* ==== MENU CELULAR INICIO ==== */
