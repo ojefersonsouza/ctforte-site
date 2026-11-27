@@ -612,6 +612,11 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
 [data-page="thai"] .armas{gap:16px;background:none;border:0;border-radius:0;overflow:visible}
 [data-page="thai"] .arma{border:1px solid var(--line-2);border-radius:16px;background:var(--ink-2)}
 [data-page="thai"] .shead.shead-centro .lead{margin:18px auto 0;text-align:center;max-width:1000px;padding:0;text-wrap:balance}
+/* thai: objetivos em boxes separados com ícone */
+[data-page="thai"] .objs{gap:16px;background:none;border:0;border-radius:0;overflow:visible}
+[data-page="thai"] .obj{display:flex;gap:18px;align-items:flex-start;background:var(--ink-2);border:1px solid var(--line-2);border-radius:16px;padding:26px clamp(18px,2vw,28px) 28px}
+[data-page="thai"] .obj-ic{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:rgba(224,164,0,.1);color:var(--gold)}
+[data-page="thai"] .obj-tx{min-width:0}
 /* ==== BANNER HERO FIM ==== */
 </style>
 <!-- V2 HEAD -->
@@ -726,10 +731,10 @@ body.menu-open::after{content:'';position:fixed;top:72px;left:0;right:0;bottom:0
       <p class="lead">As turmas são mistas e recebem alunos com objetivos distintos. O professor ajusta carga e exigência técnica individualmente ao longo da aula.</p>
     </div>
     <div class="objs">
-      <div class="obj"><h3 class="d d-sm">Nunca treinou antes</h3><p>Entrada pelos fundamentos — guarda, base e deslocamento — sem sparring nas primeiras aulas e com progressão acompanhada.</p></div>
-      <div class="obj"><h3 class="d d-sm">Preparo físico</h3><p>Trabalho aeróbico e de resistência muscular em formato de aula técnica, com volume ajustado ao condicionamento atual do aluno.</p></div>
-      <div class="obj"><h3 class="d d-sm">Aplicação real</h3><p>Ênfase em defesa, gestão de distância e resposta a situações de curta distância, a partir do repertório técnico do Muay Thai.</p></div>
-      <div class="obj"><h3 class="d d-sm">Confiança e cabeça leve</h3><p>O treino descarrega o estresse do dia e constrói autoconfiança: você sai de cada aula mais forte e mais seguro do que entrou.</p></div>
+      <div class="obj"><span class="obj-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V11"/><path d="M12 11c0-4 3-7 8-7 0 5-3 8-8 7z"/><path d="M12 14c0-3-2.5-5.5-7-5.5 0 4.5 2.5 6.5 7 5.5z"/></svg></span><div class="obj-tx"><h3 class="d d-sm">Nunca treinou antes</h3><p>Entrada pelos fundamentos — guarda, base e deslocamento — sem sparring nas primeiras aulas e com progressão acompanhada.</p></div></div>
+      <div class="obj"><span class="obj-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/><polyline points="3.5 12 8 12 10 9 13 15 15 12 20.5 12"/></svg></span><div class="obj-tx"><h3 class="d d-sm">Preparo físico</h3><p>Trabalho aeróbico e de resistência muscular em formato de aula técnica, com volume ajustado ao condicionamento atual do aluno.</p></div></div>
+      <div class="obj"><span class="obj-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><div class="obj-tx"><h3 class="d d-sm">Aplicação real</h3><p>Ênfase em defesa, gestão de distância e resposta a situações de curta distância, a partir do repertório técnico do Muay Thai.</p></div></div>
+      <div class="obj"><span class="obj-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.9" y1="4.9" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.1" y2="19.1"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.9" y1="19.1" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.1" y2="4.9"/></svg></span><div class="obj-tx"><h3 class="d d-sm">Confiança e cabeça leve</h3><p>O treino descarrega o estresse do dia e constrói autoconfiança: você sai de cada aula mais forte e mais seguro do que entrou.</p></div></div>
     </div>
   </div>
 </section>
