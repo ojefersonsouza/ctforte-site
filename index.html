@@ -746,14 +746,8 @@ html.intro-on [data-page] .hero :is(.hb-badge,.hb-selo,.thai.sm){opacity:0;anima
 main > section{position:relative}
 .js main > section:not(.hero):not(.final):not(.cta) :is(h2.d, .lead, .pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){opacity:0}
 .v2-js [data-page] main > section:not(.hero):not(.final):not(.cta) .lead:not(.in){translate:none!important;transition:none!important}
-main > section:not(.hero):not(.final):not(.cta) h2.d{--acende:#D81F26}
-[data-page="thai"] main > section:not(.hero):not(.final):not(.cta) h2.d{--acende:#E0A400}
 main > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .valor h3, .step h3, .pub h3, .box-t, .mod h3){--cortina-cor:#D81F26}
 [data-page="thai"] main > section:not(.hero):not(.final):not(.cta) :is(.pbox-t, .arma h3, .obj h3, .stp h3, .box-t){--cortina-cor:#E0A400}
-[data-transicao-pixelada]{position:absolute;right:0;bottom:-1px;left:0;z-index:10;pointer-events:none}
-[data-pixel-painel]{display:flex;width:100%}
-[data-pixel-coluna]{display:flex;flex:1 1 0%;flex-direction:column;justify-content:flex-end;min-width:0}
-[data-pixel]{width:100%;aspect-ratio:1;background:currentColor;backface-visibility:hidden;visibility:hidden;margin-top:-1px}
 @media (prefers-reduced-motion: reduce){.js main *{opacity:1!important}}
 /* ==== INTRO E MOVIMENTO FIM ==== */
 
@@ -1181,53 +1175,6 @@ window.__v2ok=1;
     return c;
   }
   const copia = (el) => { const k = el.cloneNode(true); k.querySelectorAll('[data-camada]').forEach((x) => x.remove()); return k.innerHTML; };
-
-  // ---------- 2 · a transição pixelada (presa à rolagem) ----------
-  // no pé de cada seção, quadradinhos da cor da seção seguinte cobrem o fim dela enquanto ela sai da tela
-  const celular = matchMedia('(max-width: 767px)'), tablet = matchMedia('(min-width: 768px) and (max-width: 1024px)');
-  const corDe = (el) => { const c = getComputedStyle(el).backgroundColor; return c === 'rgba(0, 0, 0, 0)' || c === 'transparent' ? getComputedStyle(document.body).backgroundColor : c; };
-  const secoes = $$('main > section');
-  secoes.forEach((secao, i) => {
-    // a última seção (contato / tabela) passa para o rodapé sem o quadriculado
-    const prox = secoes[i + 1];
-    if (!prox) return;
-    if (secao.matches('.final, .cta') || prox.matches('.final, .cta')) return;
-    const cor = corDe(prox);
-    if (cor === corDe(secao)) return; // mesma cor: não há o que transicionar
-    const caixa = novo('div', { 'data-transicao-pixelada': '', 'aria-hidden': 'true' });
-    caixa.style.color = cor;
-    secao.append(caixa);
-    let ordem = [], painel = null, chave = '';
-    const montar = () => {
-      const k = celular.matches ? 'c' : tablet.matches ? 't' : 'd';
-      if (k === chave) return; chave = k;
-      painel?.remove();
-      const colunas = celular.matches ? 8 : tablet.matches ? 12 : 16;
-      const linhas = (celular.matches || tablet.matches) ? 4 : 6;
-      painel = novo('div', { 'data-pixel-painel': '' });
-      const cel = [];
-      for (let c = 0; c < colunas; c++) {
-        const col = novo('div', { 'data-pixel-coluna': '' });
-        for (let l = 0; l < linhas; l++) { const px = novo('div', { 'data-pixel': '' }); col.append(px); cel.push({ px, o: (linhas - 1 - l) * 50 + Math.random() * 300 + Math.sin(c * 0.3) * 30 }); }
-        painel.append(col);
-      }
-      caixa.append(painel);
-      ordem = cel.sort((a, b) => a.o - b.o).map((x) => ({ px: x.px, v: -1 }));
-      s.ultimo = undefined;
-    };
-    // cobrir: do pé da seção a 65% da tela até o pé no topo
-    const s = scrub((vh) => { const r = secao.getBoundingClientRect(); return lim((vh * 0.65 - r.bottom) / (vh * 0.65)); }, (p) => {
-      const n = ordem.length; if (!n) return;
-      const T = p * 1.6;
-      ordem.forEach((c, j) => {
-        const ini = n > 1 ? (j * 1.5) / (n - 1) : 0;
-        const a = Math.round(lim((T - ini) / 0.1) * 100) / 100;
-        if (a !== c.v) { c.v = a; c.px.style.opacity = a; c.px.style.visibility = a ? 'inherit' : 'hidden'; }
-      });
-    }, 0.3);
-    montar();
-    celular.addEventListener('change', montar); tablet.addEventListener('change', montar);
-  });
 
   // ---------- 3 · os títulos que acendem letra por letra (verde-água → branco) ----------
   $$(ALVOS.revela).forEach((titulo) => {
